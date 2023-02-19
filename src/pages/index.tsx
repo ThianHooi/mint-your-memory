@@ -14,8 +14,7 @@ const Home: NextPage = () => {
       <MainView>
         <div className="flex h-full min-h-screen w-full flex-col items-center justify-center gap-12 px-4 py-16 ">
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
-            Save your memory as a{" "}
-            <span className="text-[hsl(280,100%,70%)]">NFT</span>
+            Mint your <span className="text-[hsl(280,100%,70%)]">memory</span>
           </h1>
           <div className="flex items-center">
             <Link

@@ -6,13 +6,17 @@ export type ContractMetadata = {
 };
 
 export type ContractTrait = {
-  [Key: string]: string;
+  // [Key: string]: string;
+  trait_type?: string;
+  value: string;
 };
 
 export type CreateContractInput = {
   metadata: ContractMetadata;
-  traits: ContractTrait[];
-  receivers: [];
+  imageName: string;
+  imageDescription?: string;
+  traits?: ContractTrait[] | undefined;
+  receivers: string[];
 };
 
 export type NFTMetadataInputLimited = Pick<
