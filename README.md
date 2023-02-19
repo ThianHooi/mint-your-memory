@@ -1,28 +1,20 @@
-# Create T3 App
+# Mint Your Memory
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+## What does this project do?
 
-## What's next? How do I make an app with this?
+This is a simple frontend that allows user to upload an image and mint the image as a `ERC-1155` NFT. After contract is deployed, it will also allow user to airdrop the NFT to the other wallet addresses.
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+The project idea is to allow one to share a memory or image as a NFT to his friends or family. 
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+## TODO
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- [ ] Better page navigation (E.g: add back button that allow user to go back to previous screen)
+- [ ] Mobile responsive
+- [ ] Dashboard to show deployed NFTs
 
-## Learn More
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+### Tech Stack
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- [T3 Stack](https://create.t3.gg/)
+- [Thirdweb](https://thirdweb.com/)
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
