@@ -105,23 +105,23 @@ const CreateContract = () => {
     });
   };
 
-  const onImageUploaded = async (image: File) => {
+  const onImageUploaded = (image: File) => {
     setUploadedImage(image);
   };
 
-  const onSubmitMetadata = async (metadata: ContractMetadata) => {
+  const onSubmitMetadata = (metadata: ContractMetadata) => {
     setCreateContractInput({ ...createContractInput, metadata });
     setCreateContractSteps(CreateContractStep.UploadImage);
   };
 
-  const onSubmitImageDescription = async (
+  const onSubmitImageDescription = (
     imageData: Pick<CreateContractInput, "imageName" | "imageDescription">
   ) => {
     setCreateContractInput({ ...createContractInput, ...imageData });
     setCreateContractSteps(CreateContractStep.InputTraits);
   };
 
-  const onSubmitTraits = async (traits: ContractTrait[]) => {
+  const onSubmitTraits = (traits: ContractTrait[]) => {
     setCreateContractInput({
       ...createContractInput,
       traits: parseTraits(traits),
@@ -129,7 +129,7 @@ const CreateContract = () => {
     setCreateContractSteps(CreateContractStep.InputReceivers);
   };
 
-  const onSubmitReceivers = async (receivers: string[]) => {
+  const onSubmitReceivers = (receivers: string[]) => {
     const validReceivers = [
       ...receivers.filter((add) => !!add),
       connectedAddress as string,
