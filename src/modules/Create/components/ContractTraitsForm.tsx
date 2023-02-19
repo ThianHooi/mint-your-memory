@@ -23,7 +23,9 @@ const ContractTraitsForm = ({ nextStepHandler }: Props) => {
 
   useEffect(() => {
     if (!fields.length) {
-      append({ trait_type: "", value: "" } as any, { shouldFocus: false });
+      append({ trait_type: "", value: "" } as ContractTrait, {
+        shouldFocus: false,
+      });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -66,7 +68,7 @@ const ContractTraitsForm = ({ nextStepHandler }: Props) => {
         <div className="mt-4 w-full">
           <button
             onClick={() =>
-              append({ trait_type: "", value: "" } as any, {
+              append({ trait_type: "", value: "" } as ContractTrait, {
                 shouldFocus: true,
               })
             }

@@ -54,7 +54,7 @@ const CreateContract = () => {
 
     if (isNetworkMismatched) {
       alert("Switch to Mumbai network");
-      switchNetwork && switchNetwork(ChainId.Mumbai);
+      switchNetwork && (await switchNetwork(ChainId.Mumbai));
       return;
     }
 
@@ -142,7 +142,11 @@ const CreateContract = () => {
     deployEditionContract({
       ...createContractInput,
       receivers: validReceivers,
-    });
+    })
+      .then(() => {
+        console.log("deployed");
+      })
+      .catch((err) => console.error(`Failed to deploy`, err));
   };
 
   const getPageTitle = (step: CreateContractStep) => {

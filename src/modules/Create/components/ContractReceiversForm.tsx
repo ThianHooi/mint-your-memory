@@ -38,7 +38,7 @@ const ContractReceiversForm = ({ nextStepHandler }: Props) => {
 
   useEffect(() => {
     if (!fields.length) {
-      append("" as any, { shouldFocus: false });
+      append({ address: "" } as { address: string }, { shouldFocus: false });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -56,9 +56,7 @@ const ContractReceiversForm = ({ nextStepHandler }: Props) => {
         <div className="w-full">
           {fields.map((field, index) => (
             <div key={field.id} className="mb-4">
-              <div
-                className="flex items-center justify-center space-x-4"
-              >
+              <div className="flex items-center justify-center space-x-4">
                 <input
                   className="w-full appearance-none rounded border-2 border-gray-200 bg-gray-200 py-2 px-4 leading-tight text-gray-700 focus:border-purple-500 focus:bg-white focus:outline-none"
                   {...register(`receivers.${index}.address` as const)}
@@ -84,7 +82,7 @@ const ContractReceiversForm = ({ nextStepHandler }: Props) => {
         <div className="mt-4 w-full">
           <button
             onClick={() =>
-              append("" as any, {
+              append({ address: "" } as { address: string }, {
                 shouldFocus: true,
               })
             }

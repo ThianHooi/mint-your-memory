@@ -11,6 +11,6 @@ export const constructBlockExplorerUrl = (
   network: ChainId,
   address: string
 ) => {
-  const blockExplorerUrl = Web3ChainToBlockExplorer[network];
+  const blockExplorerUrl = Web3ChainToBlockExplorer[network] ?? "";
   return `${blockExplorerUrl}/address/${address}`;
 };
