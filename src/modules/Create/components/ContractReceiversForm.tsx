@@ -55,9 +55,8 @@ const ContractReceiversForm = ({ nextStepHandler }: Props) => {
       >
         <div className="w-full">
           {fields.map((field, index) => (
-            <div className="mb-4">
+            <div key={field.id} className="mb-4">
               <div
-                key={field.id}
                 className="flex items-center justify-center space-x-4"
               >
                 <input
