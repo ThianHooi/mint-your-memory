@@ -21,6 +21,7 @@ import ContractTraitsForm from "./ContractTraitsForm";
 import { CreateContractStep } from "../enum";
 import { parseTraits } from "../../../utils/parse-traits";
 import ContractReceiversForm from "./ContractReceiversForm";
+import PreviousStepButton from "../../../components/PreviousStepButton";
 
 const CreateContract = () => {
   const [uploadedImage, setUploadedImage] = useState<File>();
@@ -145,6 +146,7 @@ const CreateContract = () => {
     })
       .then(() => {
         console.log("deployed");
+        setCreateContractSteps(CreateContractStep.InputMetadata);
       })
       .catch((err) => console.error(`Failed to deploy`, err));
   };
@@ -182,6 +184,21 @@ const CreateContract = () => {
     }
   };
 
+  const backButtonHandler = () => {
+    if (createContractSteps === CreateContractStep.UploadImage) {
+      setCreateContractSteps(CreateContractStep.InputMetadata);
+      return;
+    }
+    if (createContractSteps === CreateContractStep.InputTraits) {
+      setCreateContractSteps(CreateContractStep.UploadImage);
+      return;
+    }
+    if (createContractSteps === CreateContractStep.InputReceivers) {
+      setCreateContractSteps(CreateContractStep.InputTraits);
+      return;
+    }
+  };
+
   return (
     <>
       <div
@@ -190,7 +207,10 @@ const CreateContract = () => {
         )}
       >
         {getPageTitle(createContractSteps)}
-        <div className="flex w-full items-center justify-center">
+        <div className="flex w-full items-center justify-center gap-4">
+          {createContractSteps !== CreateContractStep.InputMetadata && (
+            <PreviousStepButton onClick={backButtonHandler} />
+          )}
           <ConnectWallet
             className="w-3/4"
             colorMode="dark"
