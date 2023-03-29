@@ -186,7 +186,7 @@ const CreateContract = () => {
     <>
       <div
         className={classNames(
-          "flex h-full min-h-screen w-full flex-col gap-12 px-80 py-40"
+          "flex h-full min-h-screen w-full flex-col items-center justify-center gap-12 px-4 py-16"
         )}
       >
         {getPageTitle(createContractSteps)}
