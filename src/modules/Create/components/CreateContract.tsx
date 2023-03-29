@@ -221,7 +221,13 @@ const CreateContract = () => {
         {connectedAddress &&
           createContractSteps === CreateContractStep.InputMetadata && (
             <>
-              <ContractMetadataForm nextStepHandler={onSubmitMetadata} />
+              <ContractMetadataForm
+                nextStepHandler={onSubmitMetadata}
+                metadata={{
+                  title: createContractInput?.metadata?.title ?? "",
+                  description: createContractInput?.metadata?.description,
+                }}
+              />
             </>
           )}
         {connectedAddress &&
@@ -230,6 +236,10 @@ const CreateContract = () => {
               <Uploader
                 onImageUploaded={onImageUploaded}
                 nextStepHandler={onSubmitImageDescription}
+                defaultValues={{
+                  imageName: createContractInput?.imageName ?? "",
+                  imageDescription: createContractInput?.imageDescription,
+                }}
               />
             </>
           )}

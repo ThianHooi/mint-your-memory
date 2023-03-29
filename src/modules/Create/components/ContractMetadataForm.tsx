@@ -5,14 +5,21 @@ import NextStepButton from "../../../components/NextStepButton";
 
 type Props = {
   nextStepHandler?: (metadata: ContractMetadata) => void;
+  metadata?: ContractMetadata;
 };
 
-const ContractMetadataForm = ({ nextStepHandler }: Props) => {
+const ContractMetadataForm = ({ nextStepHandler, metadata }: Props) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<ContractMetadata>();
+  } = useForm<ContractMetadata>({
+    ...(metadata && {
+      defaultValues: {
+        ...metadata,
+      },
+    }),
+  });
 
   return (
     <div>
