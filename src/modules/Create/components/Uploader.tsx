@@ -47,7 +47,7 @@ const Uploader = ({ onImageUploaded, nextStepHandler }: Props) => {
   return (
     <>
       <div
-        className="flex h-80 w-full flex-col items-center justify-center border border-dashed border-gray-500 text-center text-white"
+        className="flex h-40 md:h-80 flex-col items-center justify-center border border-dashed border-gray-500 text-center text-white px-4"
         {...getRootProps()}
       >
         <input {...getInputProps()} />
@@ -76,7 +76,7 @@ const Uploader = ({ onImageUploaded, nextStepHandler }: Props) => {
           className="flex w-full flex-col items-center justify-center gap-y-4"
           onSubmit={handleSubmit((data) => {
             if (!uploadedFile) {
-              alert("Upload your image");
+              alert("Please upload your image");
               return;
             }
             console.log(data);
