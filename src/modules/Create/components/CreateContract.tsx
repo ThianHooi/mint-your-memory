@@ -88,6 +88,11 @@ const CreateContract = () => {
       supply: deployData.receivers?.length ?? 1,
       metadata: {
         image: uploadedImage,
+        name: deployData?.imageName,
+        description: deployData?.imageDescription,
+        attributes: deployData?.traits?.map((trait) => ({
+          [trait.trait_type ?? ""]: trait.value,
+        })),
       },
     });
 
