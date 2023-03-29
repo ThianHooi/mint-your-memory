@@ -8,8 +8,8 @@ The project idea is to allow one to share a memory or image as a NFT to his frie
 
 ## TODO
 
-- [ ] Better page navigation (E.g: add back button that allow user to go back to previous screen)
-- [ ] Mobile responsive
+- [x] Better page navigation (E.g: add back button that allow user to go back to previous screen)
+- [x] Mobile responsive
 - [ ] Dashboard to show deployed NFTs
 
 
